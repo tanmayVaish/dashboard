@@ -9,7 +9,7 @@ function App() {
   const [subtype, setSubtype] = useState(null);
   const [from , setFrom] = useState('2010-08-01T00:00:00');
   const [to , setTo] = useState('2021-09-01T00:00:00');
-
+  const [data, setData] = useState(null);
 
   const fetchData = async (e) => {
     e.preventDefault();
@@ -20,7 +20,8 @@ function App() {
       datefrom: from,
       dateto: to,
     }).then(function (response) {
-      console.log(response);
+      console.log(response.data.data);
+      setData(response.data.data);
     }).catch(function (error) {
       console.log(error);
     });
@@ -43,59 +44,35 @@ function App() {
         </form>
 
         <div className={'data'}>
-        <table className="divide-y divide-white">
-          <thead className={'bg-gray-500'}>
-          <tr>
-            <th
-                scope={'col'}
-                className={
-                  'p-2 text-left text-lg font-medium text-white uppercase tracking-wider'
-                }
-            >
-              Long-URL
-            </th>
-            <th
-                scope="col"
-                className="p-2 text-left text-lg font-medium text-white uppercase tracking-wider"
-            >
-              Short-URL
-            </th>
-            <th
-                scope="col"
-                className="p-2 text-left text-lg font-medium text-white uppercase tracking-wider"
-            >
-              Clicks
-            </th>
-          </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-              <tr>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">
-                        asdf
-                      </div>
+          {data && data.map((item, index) => {
+            return (
+                <div className={'dataItem'} key={index}>
+                  <div className={'dataItemImage'}>
+                    <img src={`https://tolltax.xyz${item.image}`} alt={item.image}/>
+                  </div>
+                  <div className={'dataItemTitle'}>
+                    <span>{item.licence_plate}</span>
+                  </div>
+                  <div className={'dataItemContent'}>
+                    <div className={'dataItemContentItem'}>
+                      <span>{item.vehicle_type}</span>
+                    </div>
+                    <div className={'dataItemContentItem'}>
+                      <span>{item.vehicle_subtype}</span>
+                    </div>
+                    <div className={'dataItemContentItem'}>
+                      <span>{item.datefrom}</span>
+                    </div>
+                    <div className={'dataItemContentItem'}>
+                      <span>{item.dateto}</span>
+                    </div>
+                    <div className={'dataItemContentItem'}>
+                      <span>{item.total_amount}</span>
                     </div>
                   </div>
-                </td>
-                <td className={'px-6 py-4 whitespace-nowrap'}>
-                  <div className="flex items-center">
-                    <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">
-                        asdf
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    sladfkj
-                  </span>
-                </td>
-              </tr>
-          </tbody>
-        </table>
+                </div>
+            )
+          })}
         </div>
 
       </div>

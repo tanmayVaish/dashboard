@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
 
 .App{
-    @apply h-screen items-center justify-center w-full;
+    @apply h-full items-center justify-center w-full;
     background: url("./assets/ocean.jpg");
     font-family: 'Supermercado One', cursive;
 }
@@ -27,9 +27,6 @@ input{
 }
 
 .data{
-    @apply w-full p-4 flex items-center justify-center mt-5;
+    @apply w-full p-4 flex flex-col items-center justify-center mt-5;
 }
 
-table{
-    @apply w-full border-collapse;
-}
