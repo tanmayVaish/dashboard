@@ -99,13 +99,13 @@ function App() {
           {data && data.map((item, index) => {
             return (
                 <div className={'dataItem'} key={index}>
-                  <div className={'dataItemTitle'}>
-                    Vehicle Number: <span>{index+1}</span>
-                  </div>
                   <div className={'dataItemImage'}>
-                    Image
                     <img src={images[index]} alt={'truck'}/>
                   </div>
+                  <div className={'dataItemBottom'}>
+                  {/*<div className={'dataItemTitle'}>*/}
+                  {/*  Vehicle Number: <span>{index+1}</span>*/}
+                  {/*</div>*/}
                   <div className={'dataItemContent'}>
                     <div className={'dataItemContentItem'}>
                       License Plate No.:
@@ -135,6 +135,7 @@ function App() {
                       Video
                       <video src={video[index]} autoPlay muted loop/>
                     </div>
+                  </div>
                   </div>
                 </div>
             )
