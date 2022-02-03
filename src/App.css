@@ -27,6 +27,41 @@ input{
 }
 
 .data{
-    @apply w-full p-4 flex flex-col items-center justify-center mt-5;
+    @apply flex flex-col items-center justify-center mt-5 gap-5;
+    
+}
+
+.dataItem{
+    @apply text-white bg-orange-500 w-full p-4 rounded-2xl p-10 text-left;
+}
+
+.dataItemTitle{
+    @apply font-extrabold text-gray-900 text-3xl text-center my-5;
+}
+.dataItemTitle span{
+    @apply font-medium ml-2 text-lg text-white;
+}
+
+.dataItemImage{
+    @apply text-orange-800 text-xl font-extrabold text-center mb-10;
+}
+
+.dataItemImage img{
+    @apply mt-5
+}
+
+.dataItemContentItem{
+    @apply font-extrabold text-xl text-orange-800;
+}
+.dataItemContentItem span{
+    @apply font-medium ml-2 text-orange-100 text-lg;
+}
+
+.dataItemContentItem:last-child{
+    @apply mt-5 text-center
+}
+
+.dataItemContentItem:last-child video{
+    @apply mt-5;
 }
 
