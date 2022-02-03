@@ -79,26 +79,28 @@ function App() {
 
   return (
       <div className="App">
-        <div className="title">
-          <span>Toll Tax</span>
-        </div>
-        <form className='form' onSubmit={fetchData}>
-          <div className='inputs'>
-            <input type="text" placeholder='Licence Plate' onChange={(e) => setPlate(e.target.value)} value={plate}/>
-            <input type="text" placeholder='Vehicle Type' onChange={(e) => setType(e.target.value)} value={type}/>
-            <input type="text" placeholder='Vehicle Subtype' onChange={(e) => setSubtype(e.target.value)} value={subtype}/>
-            <input type="text" placeholder='Data From' onChange={(e) => setFrom(e.target.value)} value={from}/>
-            <input type="text" placeholder='Date To' onChange={(e) => setTo(e.target.value)} value={to}/>
+        <div className={'inputArea'}>
+          <div className="title">
+            <span>Toll Tax</span>
           </div>
-          <input className='submitBtn' type="submit" value="Submit"/>
-        </form>
+          <form className='form' onSubmit={fetchData}>
+            <div className='inputs'>
+              <input type="text" placeholder='Licence Plate' onChange={(e) => setPlate(e.target.value)} value={plate}/>
+              <input type="text" placeholder='Vehicle Type' onChange={(e) => setType(e.target.value)} value={type}/>
+              <input type="text" placeholder='Vehicle Subtype' onChange={(e) => setSubtype(e.target.value)} value={subtype}/>
+              <input type="text" placeholder='Data From' onChange={(e) => setFrom(e.target.value)} value={from}/>
+              <input type="text" placeholder='Date To' onChange={(e) => setTo(e.target.value)} value={to}/>
+            </div>
+            <input className='submitBtn' type="submit" value="Submit"/>
+          </form>
+        </div>
 
         <div className={'data'}>
           {data && data.map((item, index) => {
             return (
                 <div className={'dataItem'} key={index}>
                   <div className={'dataItemTitle'}>
-                    Vehicle Number: {index+1}
+                    Vehicle Number: <span>{index+1}</span>
                   </div>
                   <div className={'dataItemImage'}>
                     Image
@@ -131,7 +133,7 @@ function App() {
                     </div>
                     <div className={'dataItemContentItem'}>
                       Video
-                      <video src={video[index]} controls/>
+                      <video src={video[index]} autoPlay muted loop/>
                     </div>
                   </div>
                 </div>

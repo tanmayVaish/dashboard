@@ -1,67 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
 
+
+/* Input Area */
 .App{
     @apply h-full items-center justify-center w-full;
     background: url("./assets/ocean.jpg");
-    font-family: 'Supermercado One', cursive;
+    font-family: Times New Roman;
 }
 
 .title{
     @apply text-center py-6 px-10 text-orange-200 text-8xl font-bold w-full;
+
 }
 
 input{
     @apply border-4 outline-none border-orange-400 p-3 text-orange-300 rounded-2xl;
+
 }
 
 .form{
     @apply flex flex-col gap-2;
+    @apply sm:w-full sm:items-center sm:justify-center;
 }
 
 .inputs{
     @apply flex flex-col gap-5 p-4;
+    @apply sm:w-1/2;
 }
 
 .submitBtn{
     @apply m-4 bg-orange-500 hover:bg-orange-700 cursor-pointer text-white font-bold py-2 px-4 rounded-2xl;
 }
 
+/* Input Area */
+
+
+
+
+/* Output Area */
+
 .data{
-    @apply flex flex-col items-center justify-center mt-5 gap-5;
-    
+    @apply w-full flex items-center justify-center flex-wrap;
 }
 
 .dataItem{
-    @apply text-white bg-orange-500 w-full p-4 rounded-2xl p-10 text-left;
+    @apply text-white m-4 p-8 rounded-lg text-left backdrop-blur-lg bg-white bg-opacity-20 shadow-xl shadow-neutral-800 ;
+    @apply xl:w-1/4 lg:w-1/4 md:w-1/3 sm:w-1/2;
 }
 
 .dataItemTitle{
-    @apply font-extrabold text-gray-900 text-3xl text-center my-5;
+    @apply font-extrabold text-3xl text-center my-5 ;
 }
+
 .dataItemTitle span{
-    @apply font-medium ml-2 text-lg text-white;
+    @apply font-bold text-orange-500;
 }
 
 .dataItemImage{
-    @apply text-orange-800 text-xl font-extrabold text-center mb-10;
+    @apply text-white text-xl font-extrabold text-center mb-10;
 }
 
 .dataItemImage img{
-    @apply mt-5
+    @apply mt-5 rounded-xl;
 }
 
 .dataItemContentItem{
-    @apply font-extrabold text-xl text-orange-800;
+    @apply font-extrabold text-xl text-orange-500;
 }
 .dataItemContentItem span{
     @apply font-medium ml-2 text-orange-100 text-lg;
 }
 
 .dataItemContentItem:last-child{
-    @apply mt-5 text-center
+    @apply mt-5 text-center text-white;
 }
 
 .dataItemContentItem:last-child video{
-    @apply mt-5;
+    @apply mt-5 rounded-xl;
 }
 
+/* Output Area */
